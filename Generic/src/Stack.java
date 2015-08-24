@@ -18,6 +18,30 @@ public class Stack<E> {
 		return elements[top--];
 	}
 
+	@Override
+	public boolean equals(Object input) {
+		Boolean result;
+		Stack<E> stackInput = null;
+		if (this == input)
+			return true;
+		if (input instanceof Stack<?>)
+			stackInput = (Stack<E>) input;
+		else
+			return false;
+
+		if (this.elements.length == stackInput.elements.length)
+			result = true;
+		else
+			result = false;
+		for (int i = 0; i < elements.length; i++) {
+			if (!this.elements[i].equals(stackInput.elements[i])) {
+				result = false;
+			}
+		}
+
+		return result;
+	}
+
 	public Stack() {
 		size = 10;
 		top = -1;

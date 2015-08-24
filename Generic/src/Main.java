@@ -1,19 +1,30 @@
-import java.util.Stack;
-
 public class Main {
 
-	public static void main(String[] args) {
-		String[] str = { "ali", "hasan" };
-		Integer[] intg = { 1, 2, 3 };
-		Character[] chara = { 'a', 'b' };
+	public static void main(String[] args) throws fullQueueException,
+			EmptyQueueException, FullStackException {
 		Main main = new Main();
 		System.out.println(main.maximum(new Student("ali", 12), new Student(
 				"zohre", 10), new Student("ali", 18)));
-	
-		Stack<Student> stack = new Stack<>();
-		stack.push(new Student("ali", 15));
-		stack.push(new Student("samira", 12));
-		stack.pop();
+
+		Stack<Student> stack1 = new Stack<>();
+		stack1.push(new Student("ali", 15));
+		stack1.push(new Student("samira", 12));
+
+		System.out.println(stack1.pop());
+
+		Stack<Student> stack2 = new Stack<>();
+		stack2.push(new Student("ali", 15));
+		stack2.push(new Student("samira", 12));
+		System.out.println(stack2.pop());
+
+		boolean result = stack1.equals(new Stack<Double>());
+		System.out.println(result);
+
+		Queue<Student> queue = new Queue<>();
+		queue.push(new Student("ali", 15));
+		queue.push(new Student("samira", 12));
+		System.out.println(queue.pop());
+
 	}
 
 	public <T> void print(T[] input) {
